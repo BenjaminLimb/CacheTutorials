@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+THE_CLASSPATH=
+for i in `ls lib/*.jar`
+  do
+  THE_CLASSPATH=${THE_CLASSPATH}:${i}
+done
+
+for i in `ls ./build/jar/*.jar`
+  do
+  THE_CLASSPATH=${THE_CLASSPATH}:${i}
+done
+
+java -classpath "${THE_CLASSPATH}" com.benjaminlimb.tutorial.hazelcastdemo.BasicExample

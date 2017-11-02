@@ -1,0 +1,27 @@
+#!/bin/sh
+rm -rf target
+mkdir target
+mkdir target/classes
+
+THE_CLASSPATH=
+for i in `ls lib/*.jar`
+  do
+  THE_CLASSPATH=${THE_CLASSPATH}:${i}
+done
+
+
+# find ./lib -name "*.java" > ./target/sources.txt
+
+javac `find ./src -name "*.java" | tr '\n' ';' | sed s'/.$//'` -classpath "${THE_CLASSPATH}" -d target/classes
+
+#javac  -classpath "lib/*" -d out/
+#javac @target/sources.txt -classpath "lib/*" -d out/
+echo  "Main-Class: com.benjaminlimb.tutorial.hazelcastdemo.Main" >./target/manifest.txt
+cd target/classes
+jar cvfm ../HazelcastDemo-CommandLine.jar ../manifest.txt .
+
+cd ../
+#jar -tf HazelcastDemo-CommandLine.jar
+cd ../
+#rm ./target/sources.txt
+rm ./target/manifest.txt

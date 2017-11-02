@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="lib" path="build/jar/HazelcastDemo.jar"/>
+	<classpathentry kind="lib" path="lib/hazelcast-3.9.jar" sourcepath="/Users/benjaminlimb/Dropbox/BenjaminLimb/Sandbox/HazelcastDemo/lib/hazelcast-master.zip"/>
+	<classpathentry kind="lib" path="target/HazelcastDemo-CommandLine.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
